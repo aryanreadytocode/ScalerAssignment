@@ -100,6 +100,7 @@ public class ReverseRight {
         for (int j : array) {
             System.out.print(j+" ");
         }
+
     }
 
     public static int changeSign(int num){
