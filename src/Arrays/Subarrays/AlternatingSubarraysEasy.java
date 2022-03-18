@@ -54,13 +54,22 @@ Output 2:
 * */
 public class AlternatingSubarraysEasy {
     public static void main(String[] args) {
+        /*0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0*/
+
         ArrayList<Integer> al = new ArrayList<>();
-        al.add(1);
         al.add(0);
         al.add(1);
         al.add(0);
         al.add(1);
-        System.out.println(new AlternatingSubarraysEasy().solve(al, 1));
+        al.add(1);
+        al.add(1);
+        al.add(0);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(1);
+        al.add(0);
+        System.out.println(new AlternatingSubarraysEasy().solve1(al, 2));
     }
 
     public ArrayList<Integer> solve(ArrayList<Integer> A, int B) {
@@ -89,6 +98,33 @@ public class AlternatingSubarraysEasy {
         }
         return res;
 
+    }
+
+    /*0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0*/
+
+    public ArrayList<Integer> solve1(ArrayList<Integer> A, int B) {
+        ArrayList<Integer> res = new ArrayList<>(A.size());
+        if(B==0){
+            for(int i = 0; i<A.size(); i++){
+                res.add(i);
+            }
+            return res;
+        }
+
+        int length = 2*B+1;
+        for(int i = 0; i<A.size()-(length-1); i++){
+            boolean status = true;
+            for(int j = i; j<i+((length+1)/2); j++){
+                if(A.get(j).equals(A.get(j+1)) || !A.get(j).equals(A.get(2 * i + (length - 1) - j)) || A.get(i + length / 2).equals(A.get(i + (length / 2) - 1))){
+                    status = false;
+                    break;
+                }
+
+            }
+            if(status)
+                res.add(i+length/2);
+        }
+        return res;
     }
 
 
