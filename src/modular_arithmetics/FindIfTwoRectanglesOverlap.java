@@ -61,17 +61,10 @@ Overlapping rectangles can be found.
 public class FindIfTwoRectanglesOverlap {
 
     public int solve(int A, int B, int C, int D, int E, int F, int G, int H) {
-        int res = 0;
-        if(F>A && E-B<0){
-            res = 1;
-        } else if(G>C && H-C<0){
-            res = 1;
-        }else if(E<A && A-F<0){
-            res = 1;
-        }else if(H<D && D-G<0){
-            res = 1;
-        }
-
-        return res;
+        if(C<=E || G<=A)
+            return 0;
+        if(H<=B || D<=F)
+            return 0;
+        return 1;
     }
 }
