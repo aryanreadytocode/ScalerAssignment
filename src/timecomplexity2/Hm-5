@@ -1,0 +1,15 @@
+    What is the Time Complexity of following snippet ?
+
+    for (i = 0; i < N; i++) {
+      for (j = i; j < N; j++) {
+         break;
+      }
+    }
+
+
+    Choose the correct answer from below:
+    O(N)
+    O(log(N))
+    None of the above
+    O(N*N)
+    O(N*log(N))

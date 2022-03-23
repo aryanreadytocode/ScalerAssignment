@@ -1,0 +1,14 @@
+    public static void fun(int n){
+        int i,j;
+        for(i=1; i*i<=n; i++){
+            for(j=1; j*j<=i; j+=i){
+                //0(1) operation
+            }
+        }
+    }
+
+    Choose the correct answer from below:
+    O(n√n)
+    O(n)
+    O(√n)
+    O(√n*log(√n))

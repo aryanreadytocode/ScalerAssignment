@@ -1,0 +1,18 @@
+    What is the time complexity of the following code snippet?
+
+    int i =0;
+    while(i*i <=N){
+        for(int j=0; j<=N; j++){
+            for(int k = 0; k<=N; k++, i+++){
+                //0(1) operation
+            }
+        }
+        i++;
+    }
+
+    Choose the correct answer from below:
+    O(N^2)
+    O(N^3)
+    None of these
+    O(N^2 sqrt(N))
+    O(NlogN)

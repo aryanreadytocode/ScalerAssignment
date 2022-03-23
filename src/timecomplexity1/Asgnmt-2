@@ -1,0 +1,9 @@
+    Python
+    k = 0
+    for i in range(n//2, n+1):
+        j = 2
+        while j<=n:
+             k = k + n//2
+             j = j * 2
+
+    What is the time complexity of following code:

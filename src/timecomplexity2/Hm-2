@@ -1,0 +1,19 @@
+    What will be the Time Complexity of the given code?
+
+    void solve(){
+        int i = 1;
+        while(i<n){
+            int x = i;
+            while(x--){
+                //0(1) operation
+            }
+            i++;
+        }
+    }
+
+   Choose the correct answer from below:
+   O(n^2)
+   O(n)
+   O(n sqrt(n))
+   O(nlogn)
+   None of the above

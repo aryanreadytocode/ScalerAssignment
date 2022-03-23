@@ -1,0 +1,14 @@
+    What is the Time Complexity of following snippet ?
+
+    int count =0;
+    while(N){
+        count++;
+        N/=3;
+    }
+
+    Choose the correct answer from below:
+    O(log(N)) {Base 3}
+    O(N*N)
+    O(N)
+    O(log(N)) {Base 2}
+    O(Nlog(N))
