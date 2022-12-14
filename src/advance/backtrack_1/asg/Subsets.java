@@ -1,17 +1,20 @@
-package advance.dp_1.asg;
+package advance.backtrack_1.asg;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Subsets {
 
     public static void main(String[] args) {
-        List<Integer> input = new ArrayList<>();
-        input.add(1);
-        input.add(2);
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(6);
+        input.add(6);
         input.add(3);
-        List<List<Integer>> answer = subsetUsingBacktrack(input);
+        input.add(3);
+        input.add(6);
+        input.add(5);
+        ArrayList<ArrayList<Integer>> answer = subsetUsingBacktrack(input);
         for (int i = 0; i< answer.size(); i++) {
             List<Integer> val = answer.get(i);
             System.out.println(val.toString());
@@ -33,18 +36,23 @@ public class Subsets {
        return res;
     }
 
-    private static List<List<Integer>> subsetUsingBacktrack(List<Integer> input) {
-        List<List<Integer>> res = new ArrayList<>();
+    private static ArrayList<ArrayList<Integer>> subsetUsingBacktrack(ArrayList<Integer> input) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         int index = 0;
-        subsetBacktrack(index, input, new ArrayList<>(), res);
+        HashSet<ArrayList<Integer>> set = new HashSet<>();
+        subsetBacktrack(index, input, new ArrayList<>(), res, set);
         return res;
     }
 
-    private static void subsetBacktrack(int index, List<Integer> input, List<Integer> curr, List<List<Integer>> res) {
-        res.add(new ArrayList<>(curr));
+    private static void subsetBacktrack(int index, List<Integer> input, List<Integer> curr, List<ArrayList<Integer>> res,
+                                        HashSet<ArrayList<Integer>> set) {
+        if (!set.contains(curr)) {
+            res.add(new ArrayList<>(curr));
+            set.add((ArrayList<Integer>) curr);
+        }
         for (int i = index; i<input.size(); i++) {
             curr.add(input.get(i));
-            subsetBacktrack(i+1, input, curr, res);
+            subsetBacktrack(i+1, input, curr, res, set);
             curr.remove(curr.size()-1);
         }
     }

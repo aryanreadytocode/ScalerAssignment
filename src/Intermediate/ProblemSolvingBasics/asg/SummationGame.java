@@ -1,4 +1,4 @@
-package Intermediate.ProblemSolvingBasics;
+package Intermediate.ProblemSolvingBasics.asg;
 
 import java.util.Scanner;
 

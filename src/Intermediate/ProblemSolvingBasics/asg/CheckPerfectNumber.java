@@ -1,4 +1,4 @@
-package Intermediate.ProblemSolvingBasics;
+package Intermediate.ProblemSolvingBasics.asg;
 
 import java.util.Scanner;
 
@@ -67,10 +67,10 @@ public class CheckPerfectNumber {
         for (int i = 1; i * i <= ele; i++) {
             if (ele % i == 0) {
                 perfectNumber += i;
-                if (i != 1 &&  i * i != ele)
-                    perfectNumber += ele/i;
-                }
+                if (i != 1 && i * i != ele)
+                    perfectNumber += ele / i;
             }
+        }
         if (perfectNumber == ele)
             return "YES";
         else

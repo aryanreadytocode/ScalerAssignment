@@ -1,14 +1,11 @@
-package advance.dp_1.hw;
+package advance.backtrack_1.hw;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class NumberOfSquarefulArrays {
 
     public static void main(String[] args) {
-        int[] A = {41};
+        int[] A = {2226, 175, 114, 82, 39, 10, 39, 42, 102, 94, 75};
         ArrayList<Integer> al = new ArrayList<>();
         for (int n : A) {
             al.add(n);
@@ -66,11 +63,8 @@ public class NumberOfSquarefulArrays {
     }
 
     private boolean checkPFS(int i) {
-        for (int index = 1; index <= Math.sqrt(i); index++) {
-            if (index * index == i)
-                return true;
-        }
-        return false;
+        int sr = (int)Math.sqrt(i);
+        return ((sr * sr) == i);
     }
 
 
