@@ -6,9 +6,34 @@ public class CoinsSum {
 
     public static void main(String[] args) {
         int[] coins = {4, 5, 3};
-        int sum = 4;
-        int ans = new CoinsSum().maxSum(coins, sum);
+        int sum = 12;
+        int ans = new CoinsSum().maxSumBottomUp(coins, sum);
         System.out.println(ans);
+    }
+
+    public int maxSumBottomUp(int[] coins, int sum) {
+        // initialize dp
+        int[][] dp = new int[coins.length][sum+1];
+        // initialize column
+        int j = 0;
+        for (int i = 0; i<coins.length; i++) {
+            dp[i][j] = 0;
+        }
+        // initialize 0th-row
+        int i = 0;
+        for (j = 1; j<= sum; j++) {
+            if (coins[i] % j == 0)
+                dp[i][j] = 1;
+            else
+                dp[i][j] = 0;
+        }
+        for (i = 1; i<coins.length; i++) {
+            for (j = 1; j<=sum; j++) {
+                dp[i][j] = dp[i-1][j] + dp[i][j-coins[j]];
+            }
+        }
+        return dp[coins.length-1][sum];
+
     }
 
     public int maxSum(int[] coins, int sum) {
@@ -31,13 +56,13 @@ public class CoinsSum {
         }
 
         // base case
-        if (sum == 0 && index >= 0) {
-            dp[index][coins[index - 1]] = ways + 1;
-            return dp[index][coins[index - 1]];
+        if (sum == 0) {
+            dp[index][coins[index]] = ways + 1;
+            return dp[index][coins[index]];
         }
 
         // recurrence relationship
-        int ans = 0;
+        int ans;
 
         int ans1 = find(coins, sum, index - 1, dp, ways);
         int ans2 = find(coins, sum - coins[index], index, dp, ways);
