@@ -1,8 +1,0 @@
-    Raw Problem
-    What is the time complexity of following code:
-
-
-    a = 0
-    for i in range(N):
-         for j in range(N,i,-1):
-             a = a + i + j
