@@ -38,7 +38,7 @@ public class UnboundedKnapsack {
         int max = 0;
         // recurrence relationship
         if (wt[index-1] > leftWt) {
-            find(leftWt, profit, wt, dp, index-1);
+            max = find(leftWt, profit, wt, dp, index-1);
         } else {
             // don't consider item at index
             int subans1 = find(leftWt, profit, wt, dp, index-1);

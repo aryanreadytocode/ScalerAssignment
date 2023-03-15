@@ -1,9 +1,5 @@
 package advance.hashing2.exp;
 
-import kotlin.Pair;
-
-import java.util.*;
-
 public class CountRectangles {
     public static void main(String[] args) {
         int[] A = {1, 1, 2, 2};
