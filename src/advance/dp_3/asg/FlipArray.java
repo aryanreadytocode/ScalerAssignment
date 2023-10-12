@@ -1,7 +1,5 @@
 package advance.dp_3.asg;
 
-import advance.LinkedList1.asg.LinkedLists;
-import kotlin.Pair;
 
 import java.lang.reflect.Parameter;
 import java.util.*;
